@@ -3,24 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FeedMe - Policy & Terms</title>
+  <title>FeedMe</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #1E0D0C;
       color: #FFF7E9;
-      line-height: 1.6;
     }
     header {
       background-color: #E05339;
+      display: flex;
+      align-items: center;
       padding: 1rem;
-      text-align: center;
+      justify-content: space-between;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    header img {
+      height: 60px;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #FFF7E9;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     main {
       padding: 2rem;
@@ -39,34 +51,69 @@
       font-size: 0.9rem;
       color: #E0DFDE;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>FeedMe Policy Center</h1>
+    <img src="FM Logo Final.jpg" alt="FeedMe Logo" />
+    <nav>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('privacy')">Privacy Policy</a>
+      <a onclick="showSection('terms')">Terms of Use</a>
+      <a onclick="showSection('contact')">Contact</a>
+      <a onclick="showSection('faq')">FAQ</a>
+    </nav>
   </header>
 
   <main>
-    <section>
+    <section id="home">
+      <h2>Welcome to FeedMe</h2>
+      <p>FeedMe helps you decide where to eat by showing one restaurant at a time based on your preferences. No more endless scrolling—just one solid pick at a time.</p>
+    </section>
+
+    <section id="privacy" class="hidden">
       <h2>Privacy Policy</h2>
       <p>FeedMe does not collect personal data unless explicitly required for features like saved preferences. We do not sell, trade, or share your data. Restaurant data is pulled from third-party providers like Google Places and Uber Eats.</p>
     </section>
 
-    <section>
+    <section id="terms" class="hidden">
       <h2>Terms of Use</h2>
       <p>FeedMe is a restaurant recommendation tool. By using this site or app, you agree to use the service as intended and not for any unlawful purpose. We reserve the right to modify these terms at any time.</p>
     </section>
 
-    <section>
+    <section id="contact" class="hidden">
       <h2>Contact Us</h2>
       <p>Have questions or issues? Email us at <a href="mailto:support@feedme.me">support@feedme.me</a>.</p>
+    </section>
+
+    <section id="faq" class="hidden">
+      <h2>FAQ - How It Works</h2>
+      <p><strong>How does FeedMe choose a restaurant?</strong><br>
+        Based on your filters—like location, cuisine, rating, and price—we randomly show one solid choice at a time.</p>
+      <p><strong>What if I don’t like the recommendation?</strong><br>
+        You can skip it, add it to a queue, or remove it from future suggestions.</p>
+      <p><strong>Where does the data come from?</strong><br>
+        We use Google Places for restaurant data and integrate with services like Uber Eats for delivery options.</p>
+      <p><strong>Is my data saved?</strong><br>
+        Not unless you opt-in to save preferences. We value privacy and don’t store personal info unless necessary.</p>
     </section>
   </main>
 
   <footer>
     &copy; 2025 FeedMe. All rights reserved.
   </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('main > section');
+      sections.forEach(section => section.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
 
 </body>
 </html>
