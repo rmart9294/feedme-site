@@ -51,6 +51,17 @@
     .hidden {
       display: none;
     }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .logo-container img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin: auto;
+      display: block;
+    }
     p {
       text-align: left;
     }
@@ -70,14 +81,19 @@
 
   <main>
     <section id="home">
+      <div class="logo-container">
+        <img src="FM Logo Final.jpg" alt="FeedMe Logo" />
+      </div>
       <h2>Welcome to FeedMe</h2>
-      <p>FeedMe helps you decide where to eat by showing one restaurant at a time based on your preferences. No more endless scrolling—just one solid pick at a time.</p>
+      <p style="text-align: center;">
+        FeedMe helps you decide where to eat by showing one restaurant at a time based on your preferences.
+        No more endless scrolling—just one solid pick at a time.
+      </p>
     </section>
 
     <section id="privacy" class="hidden">
       <h2>Privacy Policy</h2>
       <p><strong>Last updated:</strong> July 27, 2025</p>
-
       <p>Feed Me ("we," "us," or "our") values your privacy. This Privacy Policy describes how we collect, use, store, and share your personal data when you use the Feed Me app ("App"). By using the App, you agree to the practices outlined in this policy.</p>
 
       <h3>1. Data We Collect</h3>
@@ -159,7 +175,8 @@
     function showSection(id) {
       const sections = document.querySelectorAll('main > section');
       sections.forEach(section => section.classList.add('hidden'));
-      document.getElementById(id).classList.remove('hidden');
+      const target = document.getElementById(id);
+      if (target) target.classList.remove('hidden');
     }
   </script>
 
