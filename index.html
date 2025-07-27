@@ -51,23 +51,12 @@
     .hidden {
       display: none;
     }
-    .logo-container {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .logo-container img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      margin: 2rem auto;
-      display: block;
-    }
     p {
       text-align: center;
     }
   </style>
 </head>
-<body onload="showSection('home')">
+<body>
 
   <header>
     <nav>
@@ -81,9 +70,6 @@
 
   <main>
     <section id="home">
-      <div class="logo-container">
-        <img src="feedme-logo.png" alt="FeedMe Logo" />
-      </div>
       <h2>Welcome to FeedMe</h2>
       <p>FeedMe helps you decide where to eat by showing one restaurant at a time based on your preferences.
         No more endless scrolling—just one solid pick at a time.</p>
@@ -129,7 +115,8 @@
     function showSection(id) {
       const sections = document.querySelectorAll('main > section');
       sections.forEach(section => section.classList.add('hidden'));
-      document.getElementById(id).classList.remove('hidden');
+      const target = document.getElementById(id);
+      if (target) target.classList.remove('hidden');
     }
   </script>
 
