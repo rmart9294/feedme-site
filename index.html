@@ -28,4 +28,110 @@
       cursor: pointer;
     }
     nav a:hover {
-      text-de
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #E0DFDE;
+      text-align: center;
+    }
+    a {
+      color: #E05339;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #E0DFDE;
+    }
+    .hidden {
+      display: none;
+    }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .logo-container img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin: 2rem auto;
+      display: block;
+    }
+    p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('privacy')">Privacy Policy</a>
+      <a onclick="showSection('terms')">Terms of Use</a>
+      <a onclick="showSection('contact')">Contact</a>
+      <a onclick="showSection('faq')">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="logo-container">
+        <img src="feedme-logo.png" alt="FeedMe Logo" />
+      </div>
+      <h2>Welcome to FeedMe</h2>
+      <p>FeedMe helps you decide where to eat by showing one restaurant at a time based on your preferences.
+        No more endless scrolling—just one solid pick at a time.</p>
+    </section>
+
+    <section id="privacy" class="hidden">
+      <h2>Privacy Policy</h2>
+      <p>FeedMe does not collect personal data unless explicitly required for features like saved preferences.
+         We do not sell, trade, or share your data. Restaurant data is pulled from third-party providers like
+         Google Places and Uber Eats.</p>
+    </section>
+
+    <section id="terms" class="hidden">
+      <h2>Terms of Use</h2>
+      <p>FeedMe is a restaurant recommendation tool. By using this site or app, you agree to use the service
+         as intended and not for any unlawful purpose. We reserve the right to modify these terms at any time.</p>
+    </section>
+
+    <section id="contact" class="hidden">
+      <h2>Contact Us</h2>
+      <p>Have questions or issues? Email us at
+         <a href="mailto:support@feedme.me">support@feedme.me</a>.</p>
+    </section>
+
+    <section id="faq" class="hidden">
+      <h2>FAQ - How It Works</h2>
+      <p><strong>How does FeedMe choose a restaurant?</strong><br>
+        Based on your filters—like location, cuisine, rating, and price—we randomly show one solid choice at a time.</p>
+      <p><strong>What if I don’t like the recommendation?</strong><br>
+        You can skip it, add it to a queue, or remove it from future suggestions.</p>
+      <p><strong>Where does the data come from?</strong><br>
+        We use Google Places for restaurant data and integrate with services like Uber Eats for delivery options.</p>
+      <p><strong>Is my data saved?</strong><br>
+        Not unless you opt-in to save preferences. We value privacy and don’t store personal info unless necessary.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 FeedMe. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('main > section');
+      sections.forEach(section => section.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
