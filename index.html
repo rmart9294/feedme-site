@@ -51,8 +51,14 @@
     .hidden {
       display: none;
     }
-    p {
+    .logo-container {
       text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .logo-container img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -70,9 +76,14 @@
 
   <main>
     <section id="home">
+      <div class="logo-container">
+        <img src="FeedMe Logo Final.png" alt="FeedMe Logo" />
+      </div>
       <h2>Welcome to FeedMe</h2>
-      <p>FeedMe helps you decide where to eat by showing one restaurant at a time based on your preferences.
-        No more endless scrolling—just one solid pick at a time.</p>
+      <p style="text-align: center;">
+        FeedMe helps you decide where to eat by showing one restaurant at a time based on your preferences.
+        No more endless scrolling—just one solid pick at a time.
+      </p>
     </section>
 
     <section id="privacy" class="hidden">
@@ -90,7 +101,7 @@
 
     <section id="contact" class="hidden">
       <h2>Contact Us</h2>
-      <p>Have questions or issues? Email us at
+      <p style="text-align: center;">Have questions or issues? Email us at
          <a href="mailto:support@feedme.me">support@feedme.me</a>.</p>
     </section>
 
@@ -115,8 +126,7 @@
     function showSection(id) {
       const sections = document.querySelectorAll('main > section');
       sections.forEach(section => section.classList.add('hidden'));
-      const target = document.getElementById(id);
-      if (target) target.classList.remove('hidden');
+      document.getElementById(id).classList.remove('hidden');
     }
   </script>
 
